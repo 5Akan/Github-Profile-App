@@ -2,11 +2,13 @@
 
 *{
     box-sizing: border-box;
+    margin: 0;
+    
 }
 
 body{
-    background-color: #2a2a72;
-    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    background-color: #2e2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #2e2868 74%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,9 +16,26 @@ body{
     margin: 0;
     font-family: "Poppins",sans-serif;
     min-height: 100vh;
+   
 }
 
 input{
     outline: none;
 }
 
+
+.card{
+    background-color: #3b2066;
+    background-image: linear-gradient(315deg, #3b2066 0%, #4c11ac 74%);
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),0 15px 40px rgba(166, 173, 201, 0.2);
+    display: flex;
+    padding: 3rem;
+}
+
+.avatar{
+    border: 10px solid #2a2a72;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
