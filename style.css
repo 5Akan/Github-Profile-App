@@ -7,7 +7,16 @@
 body{
     background-color: #2a2a72;
     background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     font-family: "Poppins",sans-serif;
+    min-height: 100vh;
+}
+
+input{
+    outline: none;
 }
 
