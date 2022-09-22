@@ -20,17 +20,40 @@ body{
 }
 
 input{
+    background-color: #4c2885;
+    border-radius:10px;
+    border: none;
+    padding: 1rem;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
     outline: none;
 }
 
+input::placeholder{
+    color: #bbb;
+}
+
+input:focus{
+    outline: none;
+}
 
 .card{
-    background-color: #3b2066;
-    background-image: linear-gradient(315deg, #3b2066 0%, #4c11ac 74%);
-    border-radius: 20px;
-    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),0 15px 40px rgba(166, 173, 201, 0.2);
+    background-color: #4c2885;
+    background-image: 
+    linear-gradient(315deg, #4c2885 0%, #4c11ac 100%);border-radius: 20px;
+    margin: 0 15rem 0 15rem;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(0 ,0, 0, 0.2);
     display: flex;
-    padding: 3rem;
+    padding: 2rem;
+}
+
+.img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .avatar{
@@ -38,4 +61,32 @@ input{
     border-radius: 50%;
     height: 150px;
     width: 150px;
+}
+
+.user_info{
+    margin-left: 2rem;
+    color: #eee;
+}
+
+.user_info h2{
+    margin-top: 0;
+    padding-bottom:10px ;
+}
+
+.user_info ul{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    max-width: 450px;
+    list-style: none;
+}
+
+.user_info ul li{
+    display: flex;
+    align-items: center;
+}
+
+.user_info ul li strong{
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
 }
