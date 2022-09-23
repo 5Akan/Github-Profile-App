@@ -5,13 +5,30 @@ const search = document.getElementById('search');
 
 getUser('5Akan');
 
-async function getUser(user){
-    const resp = await fetch(APIURL + user);
+async function getUser(username){
+    const resp = await fetch(APIURL + username);
 
     const respData = await resp.json();
 
     createUserCard(respData);
 
+    getRepo(username);
+
+}
+
+async function getRepo(username) {
+    const resp = await fetch(APIURL + username + "/repos");
+
+    const respData = await resp.json();
+
+    addRepoToCard(respData);
+
+}
+
+function addRepoToCard(repos) {
+    const repoEL = document.getElementById('repos');
+
+    console.log(repos);
 }
 
 function createUserCard(user) {
@@ -29,6 +46,7 @@ function createUserCard(user) {
                     <li><strong>Twitter</strong>${user.twitter_username}</li>
                     <li><strong>Following </strong>${user.following}</li>
                 </ul>
+                <ul class = "repos" id = "repos"></ul>
             </div>
         </div>
     `
