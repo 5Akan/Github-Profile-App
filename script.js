@@ -25,17 +25,13 @@ async function getRepo(username) {
 
 }
 
-function addRepoToCard(repos) {
-    const repoEL = document.getElementById('repos');
 
-    console.log(repos);
-}
 
 function createUserCard(user) {
     
     const card = `
         <div class = "card">
-            <div class = "img-container">
+            <div>
                 <img class = "avatar" src = "${user.avatar_url}" alt = "${user.name}"/>
             </div>
             <div class = "user_info">
@@ -46,11 +42,36 @@ function createUserCard(user) {
                     <li><strong>Twitter</strong>${user.twitter_username}</li>
                     <li><strong>Following </strong>${user.following}</li>
                 </ul>
-                <ul class = "repos" id = "repos"></ul>
+                <h4>Repos: </h4>
+                <div id ="repos"></div>
             </div>
         </div>
     `
     main.innerHTML = card;
+}
+
+function addRepoToCard(repos) {
+    const repoEl = document.getElementById('repos');
+
+    repos.sort((a, b) => b.stargazers_count -a.
+    stargazers_count)
+    .slice(0, 5)
+    .forEach((repo) => {
+        //sort determines how the arrangement will be made(in this case by amount of stars)
+        //slice simply counts the items that will appear
+        const repoli = document.createElement('a');
+        repoli.classList.add('repo');
+
+        repoli.href = repo.html_url;
+        repoli.target = '_blank';
+        repoli.innerText = repo.name;
+        
+
+        repoEl.appendChild(repoli);
+        
+    });
+      
+    console.log(repos);
 }
 
 form.addEventListener('submit', (e) =>{
